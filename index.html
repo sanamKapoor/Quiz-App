@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  <title>My Quiz</title>
+  <script src="https://kit.fontawesome.com/f5be5aaf66.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Section -->
+
+  <main class="p-3 p-md-5">
+    <h1 class="logo">My Quiz</h1>
+    <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, quidem!</p>
+    <form class="form mx-4 mx-md-5 my-3 my-md-4">
+      <input type="text" name="username" class="form-control my-2 my-md-3" id="" placeholder="Enter Username">
+      <select class="form-control my-2 my-md-3">
+        <option value="">Select Profession</option>
+        <option value="frontEnd">Front End Dev</option>
+        <option value="backEnd">Back End Dev</option>
+        <option value="mobileDev">Mobile Dev</option>
+      </select>
+      <div>
+        <div class="mt-2 mt-md-3">
+          <h3>Instructions </h3>
+          <ul class="">
+            <li class="p m-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis, necessitatibus.</li>
+            <li class="p m-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, vero?</li>
+            <li class="p m-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem, aut?</li>
+          </ul>
+        </div>
+     
+    </div>
+    <button type="submit" class="btn btn-outline-secondary mt-2 mt-md-3" id="start">Start Quiz</button>
+    </form>
+  </main>
+
+  <!-- Quiz Section -->
+
+  <section>
+    <div class="row no-gutters h-100 shadow-lg">
+      <div class="col-12 col-md-8 col-lg-8 p-2 p-md-4 bg-white">
+        <h1 class="logo">My Quiz</h1>
+        <h5 class="text-dark text-left py-1 py-md-2 ml-4" id="question">What is the most popular programming language of 2020</h5>
+        <div class="row mt-0 mt-md-4 options">
+          <div class="col-12 col-md-6 my-2 my-md-0">
+            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
+              Java
+             </button>
+        </div>
+          <div class="col-12  col-md-6 my-2 my-md-0">
+            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
+              Python
+            </button>
+        </div>
+        </div>
+        <div class="row mt-0 mt-md-4 options">
+          <div class="col-12 col-md-6 my-2 my-md-0">
+            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
+              Javascript
+            </button>
+          </div>
+          <div class="col-12 col-md-6 my-2 my-md-0">
+            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
+              Rust
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 col-lg-4 quiz-info p-4 text-left">
+        <h4 class="text-center">Danial</h4>
+        <p>Question No : 2/10</p>
+        <p>Timer : 15:20</p>
+        <p>Score : 30</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result Section -->
+<div class="end-of-quiz">
+
+  <article class="border shadow p-3 p-md-4 my-5">
+    <h1 class="result">Results</h1>
+    <div class="text-center my-3">
+      <i class="fas fa-star text-warning"></i>
+      <i class="fas fa-star text-warning"></i>
+      <i class="far fa-star text-warning"></i>
+      <i class="far fa-star text-warning"></i>
+      <i class="far fa-star text-warning"></i>
+    </div>
+    <div class="row no-gutters w-75 mx-auto mt-4">
+      <div class="col-12 col-md-6">
+        <p>
+          Total Score : 35
+        </p>
+      </div>
+      <div class="col-12 col-md-6">
+        <p>
+          Time Period : 12 minutes
+        </p>
+      </div>
+    </div>
+    <div class="row no-gutters w-75 mx-auto">
+      <div class="col-12 col-md-6">
+        <p>
+          Correct Answers : 07
+        </p>
+      </div>
+      <div class="col-12 col-md-6">
+        <p>
+          Wrong Answers : 03
+        </p>
+      </div>
+    </div>
+    <button class="btn btn-primary mt-2" id="answer-sheet">Answer Sheet</button>
+    <br>
+    <a href="/index.html" class="float-right mt-3">Start Again</a>
+  </article>
+
+  <!-- Answer Sheet -->
+  
+  <div class="shadow" id="table">
+    <div class="row no-gutters mb-1 bg-info overflow-auto">
+      <div class="col col-9 py-2 text-center text-light">Questions</div>
+      <div class="col col-3 py-2 text-center text-light">Answers</div>
+    </div>
+
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-1">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-1">
+        <p>Javascript</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolr, sit amet consectetur adipisicing elit. Voluptatibus vel necessitatibus nesciunt. Hic, laudantium inventore.</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+    <div class="row no-gutters">
+      <div class="col col-9  px-3 py-0">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
+      </div>
+      <div class="col col-3 text-center px-3 py-0">
+        <p>Java</p>
+     </div>
+    </div>
+  </div>
+</div>
+
+  <script src="main.js"></script>
+</body>
+</html>

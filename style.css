@@ -1,0 +1,280 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgba(0, 0, 255, 0.863);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+}
+
+/* Login Section */
+
+main{
+  display: block;
+  width: 50vw;
+  background-color: #ffffff;
+  border-radius: 20px;
+  text-align: center;
+}
+
+main form{
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  text-align: left;
+}
+
+/* Questions Section */
+
+section{
+  display: none;
+  width: 60vw;
+  height: 55vh;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+#question{
+  font-size: 1.5rem;
+}
+
+.quiz-info{
+  background-color: fuchsia;
+  color: #ffffff;
+}
+
+.quiz-info h4{
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.quiz-info p{
+  font-size: 1.3rem;
+}
+
+/* Result */
+
+.end-of-quiz{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+article{
+  display: none;
+  width: 50vw;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.fa-star {
+  font-size: 3rem;
+}
+
+#table{
+  display: none;
+  width: 50vw;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 1200px){
+  main{
+    width: 80vw;
+  }
+
+  section{
+    display: none;
+    width: 80vw;
+    height: 55vh;
+  }
+
+  article{
+    width: 80vw;
+    margin: 0 auto;
+  }
+  
+  .fa-star {
+    font-size: 2.7rem;
+  }
+
+  #table{
+    display: none;
+    width: 80vw;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+}
+
+
+@media screen and (max-width: 850px) and (max-height: 800px){
+  body{
+    height: auto;
+    width: 100%;
+    padding: 3rem;
+  }
+
+  main{
+    height: auto;
+    width: 90vw;
+  }
+
+  .logo, .result{
+    font-size: 2.2rem;
+  }
+
+  section{
+    height: auto;
+  }
+
+  #question{
+    font-size: 1.2rem;
+  }
+
+  .quiz-info h4{
+    font-size: 1.8rem;
+  }
+  
+  .quiz-info p{
+    font-size: 1.1rem;
+  }
+  
+  .fa-star {
+    font-size: 2.5rem;
+  }
+
+  #table p{
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main{
+    width: 90vw;
+    border-radius: 10px;
+  }
+
+  .logo, .result{
+    font-size: 1.8rem;
+  }
+
+  main h3{
+    font-size: 1.3rem;
+  }
+
+  main p{
+    font-size: 1rem;
+  }
+
+  main ul li{
+    font-size: 0.9rem;
+  }
+
+  section{
+    width: 90vw;
+  }
+
+  #question{
+    font-size: 1rem;
+  }
+
+  .quiz-info h4{
+    font-size: 1.5rem;
+  }
+  
+  .quiz-info p{
+    font-size: 1rem;
+  }
+
+  article{
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 10px;
+  }
+
+  article p, article a{
+    font-size: 0.8rem;
+  }
+
+  .fa-star {
+    font-size: 2rem;
+  }
+
+  #table{
+    display: none;
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  #table p{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 330px){
+  main{
+    width: 90vw;
+    border-radius: 8px;
+  }
+
+  .logo, .result{
+    font-size: 1.5rem;
+  }
+
+  main h3{
+    font-size: 1rem;
+  }
+
+  main p{
+    font-size: 0.8rem;
+  }
+
+  main ul li{
+    font-size: 0.8rem;
+  }
+
+  #question{
+    font-size: 1rem;
+  }
+
+  .quiz-info h4{
+    font-size: 1.2rem;
+  }
+  
+  .quiz-info p{
+    font-size: 0.8rem;
+  }
+
+  article{
+    width: 90vw;
+    margin: 0 auto;
+    border-radius: 8px;
+  }
+
+  .fa-star {
+    font-size: 1.7rem;
+  }
+
+  #table{
+    display: none;
+    width: 95vw;
+    margin: 0 auto;
+    border-radius: 7px;
+  }
+
+  #table p{
+    font-size: 0.7rem;
+  }
+}
