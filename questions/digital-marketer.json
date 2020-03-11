@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "question": "If customer's expectations and products performance matches, customer is ?",
+    "options": ["dissatisfied", "satisfied",  "delighted", "none of above"],
+    "answer": "satisfied"
+  },
+  {
+    "id": "2",
+    "question": "When new developed product concept is tested, next immediate step is to ?",
+    "options": ["develop market strategy", "develop a testing technique", "develop intermediaries", "develop logistic network"],
+    "answer": "develop market strategy"
+  },
+  {
+    "id": "3",
+    "question": "Which on-page element carries the most weight for SEO ?",
+    "options": ["meta tag", "title tag", "headers"],
+    "answer": "title tag"
+  },
+  {
+    "id": "4",
+    "question": "The number of characters recommended for Title Tag ?",
+    "options": ["120", "250", "70", "100"],
+    "answer": "70"
+  },
+  {
+    "id": "5",
+    "question": "The best way to improve search engine ranking is with ?",
+    "options": ["Video", "A blog", "Using a lot of graphics", "Having 500 words text"],
+    "answer": "A blog"
+  },
+  {
+    "id": "6",
+    "question": "Marketing is the art of ______ ?",
+    "options": ["Buying more", "Paying more", "Talking more", "Selling more"],
+    "answer": "Selling more"
+  },
+  {
+    "id": "7",
+    "question": "A true marketing mindset requires _____ ?",
+    "options": ["Control mindset", "Command mindset", "Passive mindset", "Active mindset"],
+    "answer": "Active mindset"
+  },
+  {
+    "id": "8",
+    "question": "Short term planning focuses on ?",
+    "options": ["Functional Plans", "Long term objectives", "Both (1) and (4)", "Specific Goals"],
+    "answer": "Both (1) and (4)"
+  },
+  {
+    "id": "9",
+    "question": "Delivery Channels means ?",
+    "options": ["Sales outlets", "Purchased goods", "Courier person", "Product shelf-life"],
+    "answer": "Sales outlets"
+  },
+  {
+    "id": "10",
+    "question": "Which one of the following Is NOT a target group for saving accounts ?",
+    "options": ["Salaried persons", "Loss making companies", "Doctors", "Insurance agents"],
+    "answer": "Loss making companies"
+  }
+]

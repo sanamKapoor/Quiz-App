@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "question": "In android studio, callback that is called when activity interaction with user is started is ?",
+    "options": ["onStart", "onStop", "onResume", "onDestroy"],
+    "answer": "onResume"
+  },
+  {
+    "id": "2",
+    "question": "One of operating system that cannot be used for android application development is ?",
+    "options": ["Eclipse", "Cooja", "Netbeans", "Android studio"],
+    "answer": "Cooja"
+  },
+  {
+    "id": "3",
+    "question": "Which programming language is used in Flutter ?",
+    "options": ["C++", "Go", "Dart", "Js"],
+    "answer": "Dart"
+  },
+  {
+    "id": "4",
+    "question": "Is React Native Open-source ?",
+    "options": ["Yes", "No"],
+    "answer": "Yes"
+  },
+  {
+    "id": "5",
+    "question": "Application is in background. Not executing any code.What is the current application state ?",
+    "options": ["Inactive state", "Active state", "Background state", "Suspended state"],
+    "answer": "Suspended state"
+  },
+  {
+    "id": "6",
+    "question": "Which of the following is a default UI property ?",
+    "options": ["assign", "non-atomic", "atomic", "None of them"],
+    "answer": "atomic"
+  },
+  {
+    "id": "7",
+    "question": "What is the built-in database used in iOS ?",
+    "options": ["MySQL", "SQLite", "Apache", "Oracle"],
+    "answer": "MySQL"
+  },
+  {
+    "id": "8",
+    "question": "Test Conditions are derived from ?",
+    "options": ["Test Design", "Test Cases", "Test Data", "Specifications"],
+    "answer": "Specifications"
+  },
+  {
+    "id": "9",
+    "question": "What was the first phone released that ran the Android OS ?",
+    "options": ["Google gPhone", "T-Mobile G1", "Motorola Droid", "HTC Hero"],
+    "answer": "T-Mobile G1"
+  },
+  {
+    "id": "10",
+    "question": "The ________ file specifies the layout of your screen ?",
+    "options": ["Layout file", "Manifest file", "Strings XML", "R file"],
+    "answer": "Layout file"
+  }
+]

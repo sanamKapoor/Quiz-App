@@ -14,14 +14,15 @@
   <main class="p-3 p-md-5">
     <h1 class="logo">My Quiz</h1>
     <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, quidem!</p>
-    <form class="form mx-4 mx-md-5 my-3 my-md-4">
-      <input type="text" name="username" class="form-control my-2 my-md-3" id="" placeholder="Enter Username">
-      <select class="form-control my-2 my-md-3">
+    <form class="form mx-4 mx-md-5 my-3 my-md-4" id="submit-form">
+      <input type="text" name="username" value="" class="form-control my-2 my-md-3" id="username" placeholder="Enter Username">
+      <select class="form-control my-2 my-md-3" id="profession">
         <option value="">Select Profession</option>
-        <option value="frontEnd">Front End Dev</option>
-        <option value="backEnd">Back End Dev</option>
-        <option value="mobileDev">Mobile Dev</option>
+        <option value="web-dev">Web Developer</option>
+        <option value="mobile-dev">Mobile Developer</option>
+        <option value="digital-marketer">Digital Marketer</option>
       </select>
+      <div class="warning text-danger"></div>
       <div>
         <div class="mt-2 mt-md-3">
           <h3>Instructions </h3>
@@ -39,41 +40,26 @@
 
   <!-- Quiz Section -->
 
-  <section>
+  <section id="quiz-start">
     <div class="row no-gutters h-100 shadow-lg">
       <div class="col-12 col-md-8 col-lg-8 p-2 p-md-4 bg-white">
         <h1 class="logo">My Quiz</h1>
         <h5 class="text-dark text-left py-1 py-md-2 ml-4" id="question">What is the most popular programming language of 2020</h5>
-        <div class="row mt-0 mt-md-4 options">
-          <div class="col-12 col-md-6 my-2 my-md-0">
-            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
-              Java
-             </button>
+
+        <div class="row mt-3 mt-md-4 options">
+          <!-- All Options -->
         </div>
-          <div class="col-12  col-md-6 my-2 my-md-0">
-            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
-              Python
-            </button>
+
+        <div class="row mt-3 mx-4 mt-md-4 checker">
+          <!-- Correct or not -->
         </div>
-        </div>
-        <div class="row mt-0 mt-md-4 options">
-          <div class="col-12 col-md-6 my-2 my-md-0">
-            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
-              Javascript
-            </button>
-          </div>
-          <div class="col-12 col-md-6 my-2 my-md-0">
-            <button class="lead w-75 mx-auto py-2 btn btn-outline-secondary">
-              Rust
-            </button>
-          </div>
-        </div>
+        
       </div>
       <div class="col-12 col-md-4 col-lg-4 quiz-info p-4 text-left">
-        <h4 class="text-center">Danial</h4>
-        <p>Question No : 2/10</p>
-        <p>Timer : 15:20</p>
-        <p>Score : 30</p>
+        <h4 class="text-center" id="user">Danial</h4>
+        <p>Question No : <span id="q-number">1/10</span></p>
+        <p>Timer : <span id="time"></span></p>
+        <p>Score : <span id="score">30</span></p>
       </div>
     </div>
   </section>
@@ -83,9 +69,9 @@
 
   <article class="border shadow p-3 p-md-4 my-5">
     <h1 class="result">Results</h1>
-    <div class="text-center my-3">
-      <i class="fas fa-star text-warning"></i>
-      <i class="fas fa-star text-warning"></i>
+    <div class="text-center my-3 star-rating">
+      <i class="far fa-star text-warning"></i>
+      <i class="far fa-star text-warning"></i>
       <i class="far fa-star text-warning"></i>
       <i class="far fa-star text-warning"></i>
       <i class="far fa-star text-warning"></i>
@@ -93,24 +79,24 @@
     <div class="row no-gutters w-75 mx-auto mt-4">
       <div class="col-12 col-md-6">
         <p>
-          Total Score : 35
+          Total Score : <span id="total_score"></span>
         </p>
       </div>
       <div class="col-12 col-md-6">
         <p>
-          Time Period : 12 minutes
+          Time Period : <span id="total_time"></span>
         </p>
       </div>
     </div>
     <div class="row no-gutters w-75 mx-auto">
       <div class="col-12 col-md-6">
         <p>
-          Correct Answers : 07
+          Correct Answers : <span id="correct_anw"></span>
         </p>
       </div>
       <div class="col-12 col-md-6">
         <p>
-          Wrong Answers : 03
+          Wrong Answers : <span id="wrong_anw"></span>
         </p>
       </div>
     </div>
@@ -121,87 +107,16 @@
 
   <!-- Answer Sheet -->
   
-  <div class="shadow" id="table">
+  <div class="shadow mb-4" id="table">
     <div class="row no-gutters mb-1 bg-info overflow-auto">
       <div class="col col-9 py-2 text-center text-light">Questions</div>
       <div class="col col-3 py-2 text-center text-light">Answers</div>
     </div>
 
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-1">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-1">
-        <p>Javascript</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolr, sit amet consectetur adipisicing elit. Voluptatibus vel necessitatibus nesciunt. Hic, laudantium inventore.</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
-    <div class="row no-gutters">
-      <div class="col col-9  px-3 py-0">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut, ullam?</p>
-      </div>
-      <div class="col col-3 text-center px-3 py-0">
-        <p>Java</p>
-     </div>
-    </div>
+    <!-- Answer Table -->
   </div>
 </div>
 
-  <script src="main.js"></script>
+<script src="./main.js"></script>
 </body>
 </html>

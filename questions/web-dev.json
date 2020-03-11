@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "question": " ______ tag is an extension to HTML that can enclose any number of JavaScript statements ?",
+    "options": ["script", "body", "head", "title"],
+    "answer": "script"
+  },
+  {
+    "id": "2",
+    "question": "What is the correct JavaScript syntax to write 'Hello World' ?",
+    "options": ["System.out.println('Hello World')", "println ('Hello World')", "document.write('Hello World')", "response.write('Hello World')"],
+    "answer": "document.write('Hello World')"
+  },
+  {
+    "id": "3",
+    "question": "Which of the following is not considered a JavaScript operator ?",
+    "options": ["new", "this", "delete", "typeof"],
+    "answer": "this"
+  },
+  {
+    "id": "4",
+    "question": "How can we write comment along with CSS code ?",
+    "options": ["/* a comment */", "// a comment //", "/ a comment /", "<' a comment'>"],
+    "answer": "/* a comment */"
+  },
+  {
+    "id": "5",
+    "question": "The attribute of form in HTML ?",
+    "options": ["Method", "Action", "Both (a)&(b)", "None of these"],
+    "answer": "Both (a)&(b)"
+  },
+  {
+    "id": "6",
+    "question": "If we want define style for an unique element, then which css selector will we use ?",
+    "options": ["id", "class", "text", "name"],
+    "answer": "id"
+  },
+  {
+    "id": "7",
+    "question": "What is a react.js in MVC ?",
+    "options": ["Controller", "Middleware", "Model", "Router"],
+    "answer": "Controller"
+  },
+  {
+    "id": "8",
+    "question": "The Node.js modules can be exposed using ?",
+    "options": ["module.expose", "module", "module.exports", "All of the above"],
+    "answer": "module.exports"
+  },
+  {
+    "id": "9",
+    "question": "Which of these is a client server application ?",
+    "options": ["Web browsing", "E-mail", "Internet Chat", "All of the above"],
+    "answer": "All of the above"
+  },
+  {
+    "id": "10",
+    "question": "We search for fields, queries etc. in MongoDB using _________ ?",
+    "options": ["C++", "Java", "JS", "None of these"],
+    "answer": "JS"
+  }
+]
