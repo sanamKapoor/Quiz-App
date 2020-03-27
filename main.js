@@ -87,7 +87,7 @@ class Question {
     this.score = 0;
     this.correctAnsw = 0;
     this.wrongAnsw = 0;
-    this.totalTime = 5 * 60;
+    this.totalTime = 10 * 60;
     this.selectedUser = username;
     this.selectedProf = prof;
     this.answerSheetDisplay = [...questions];
