@@ -3,38 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  <title>My Quiz</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">  
+  <title>My Quiz</title>
   <script src="https://kit.fontawesome.com/f5be5aaf66.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
   <!-- Login Section -->
-
-  <main class="p-3 p-md-5">
+  
+  <div class="all-content">
+  <main class="p-3 p-md-4">  
     <h1 class="logo">My Quiz</h1>
-    <p class="text-muted">Test your skills in three different fields !</p>
-    <form class="form mx-4 mx-md-5 my-3 my-md-4" id="submit-form">
-      <input type="text" name="username" value="" class="form-control my-2 my-md-3" id="username" placeholder="Enter Username">
-      <select class="form-control my-2 my-md-3" id="profession">
+    <p class="text-muted">Test your skills in three different fields</p>
+    <form class="form mx-1 mx-sm-2 mx-md-5 my-3 my-md-4" id="submit-form">
+      <input type="text" name="username" value="" minlength="4" maxlength="30" class="form-control my-2" id="username" placeholder="Enter Username">
+      <select class="form-control my-2" id="profession">
         <option value="">Select Profession</option>
         <option value="web-dev">Web Developer</option>
         <option value="mobile-dev">Mobile Developer</option>
         <option value="digital-marketer">Digital Marketer</option>
       </select>
-      <div class="warning text-danger"></div>
+      <div class="warning-area p-1"></div>
       <div>
         <div class="mt-2 mt-md-3">
           <h3>Instructions </h3>
-          <ul class="">
+          <ul>
             <li class="p m-3">
-              After you click on Start button the test will start.
+              After clicking on the Start button the test will start.
             </li>
-            <li class="p m-3">There are 10 total questions with 5 marks each.</li>
-            <li class="p m-3">Total time period will be 10 minutes.</li>
+            <li class="p m-3">There are total 10 questions with 5 marks each.</li>
+            <li class="p m-3">Total time period will be 5 minutes only.</li>
           </ul>
         </div>
-     
     </div>
     <button type="submit" class="btn btn-outline-secondary mt-2 mt-md-3" id="start">Start Quiz</button>
     </form>
@@ -46,7 +47,7 @@
     <div class="row no-gutters h-100 shadow-lg">
       <div class="col-12 col-md-8 col-lg-8 p-2 p-md-4 bg-white">
         <h1 class="logo">My Quiz</h1>
-        <h5 class="text-dark text-left py-1 py-md-2 ml-4" id="question">What is the most popular programming language of 2020</h5>
+        <h5 class="text-dark text-left py-2 mx-3" id="question"></h5>
 
         <div class="row mt-3 mt-md-4 options">
           <!-- All Options -->
@@ -58,7 +59,7 @@
         
       </div>
       <div class="col-12 col-md-4 col-lg-4 quiz-info p-4 text-left">
-        <h4 class="text-center" id="user">Danial</h4>
+        <h5 class="text-center text-break" id="user">Danial</h5>
         <p>Question No : <span id="q-number">1/10</span></p>
         <p>Timer : <span id="time"></span></p>
         <p>Score : <span id="score">30</span></p>
@@ -69,7 +70,7 @@
   <!-- Result Section -->
 <div class="end-of-quiz">
 
-  <article class="border shadow p-3 p-md-4 my-5">
+  <article class="border shadow p-3 p-md-4 my-3 my-md-4 my-lg-5">
     <h1 class="result">Results</h1>
     <div class="text-center my-3 star-rating">
       <i class="far fa-star text-warning"></i>
@@ -86,7 +87,7 @@
       </div>
       <div class="col-12 col-md-6">
         <p>
-          Time Period : <span id="total_time"></span>
+          Time Remaining : <span id="total_time"></span>
         </p>
       </div>
     </div>
@@ -109,16 +110,17 @@
 
   <!-- Answer Sheet -->
   
-  <div class="shadow mb-4" id="table">
-    <div class="row no-gutters mb-1 bg-info overflow-auto">
-      <div class="col col-9 py-2 text-center text-light">Questions</div>
-      <div class="col col-3 py-2 text-center text-light">Answers</div>
+  <div class="shadow my-2" id="table">
+    <div class="row no-gutters mb-1 bg-info no-wrap">
+      <div class="col col-7 col-sm-9 py-2 text-center text-light">Questions</div>
+      <div class="col col-5 col-sm-3 py-2 text-center text-light">Answers</div>
     </div>
-
-    <!-- Answer Table -->
   </div>
 </div>
+</div>
 
+<p class="water-mark mx-2 mx-sm-3 my-1">Made with ❤️ by Sanam Kapoor</p>
 <script src="./main.js"></script>
 </body>
 </html>
+

@@ -1,4 +1,3 @@
-
 const startBtn = document.getElementById('start');
 const options = document.querySelectorAll('.options button');
 const answerSheet = document.getElementById('answer-sheet');
@@ -9,65 +8,54 @@ const form = document.querySelector('#submit-form');
 const user = document.getElementById('user');
 const score = document.getElementById('score');
 const timeOut = document.getElementById('time');
+const allContent = document.querySelector('.all-content');
+const warningArea = document.querySelector('.warning-area');
+const table = document.getElementById('table');
 
+let tableWrapper = document.createElement('div');
+tableWrapper.className = 'overflow-auto';
+
+const regxForUsername = new RegExp( /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/);
 
 form.addEventListener('submit', e => {
   e.preventDefault();
   let selectedProf = profession[0].selectedOptions[0].value;
   let selectedUser = username.value;
 
-  if((selectedUser === '' && selectedProf === '') || (selectedUser === undefined && selectedProf === null)){
-    document.querySelector('.warning').innerHTML = 'Please enter both fields ...';
+  warningArea.classList.add('warning');
 
-    setTimeout(() => {
-      document.querySelector('.warning').innerHTML = '';
-    }, 3000);
+  if((selectedUser === '' && selectedProf === '') || (selectedUser === undefined && selectedProf === null)){
+    warningArea.innerHTML = 'Please provide both fields ...';
+    removeWarning();
     return;
   }
   else if(selectedUser === '' || selectedUser === undefined){
-     document.querySelector('.warning').innerHTML = 'Please enter username ...';
-
-    setTimeout(() => {
-      document.querySelector('.warning').innerHTML = '';
-    }, 3000);
+    warningArea.innerHTML = 'Please provide username ...';
+    removeWarning();
     return;
   }
-  else if(!isNaN(selectedUser)){
-    document.querySelector('.warning').innerHTML = 'Username should contain alphabets ...';
-
-    setTimeout(() => {
-      document.querySelector('.warning').innerHTML = '';
-    }, 3000);
+  else if(!regxForUsername.test(selectedUser)){
+    warningArea.innerHTML = 'Username should only contain alphabets ...';
+    removeWarning();
     return;
   }
   else if(selectedProf === '' || selectedProf === undefined){
-    
-    document.querySelector('.warning').innerHTML = 'Please choose any profession ...';
-
-    setTimeout(() => {
-      document.querySelector('.warning').innerHTML = '';
-    }, 3000);
+    warningArea.innerHTML = 'Please choose any profession ...';
+    removeWarning();
     return;
-
   }
   else {
     
     let question = [];
 
-    const fetchQuestions = async (user, prof, type) => {
-      const res = await fetch(`questions/${type}.json`);
+    const fetchQuestions = async (user, prof) => {
+      const res = await fetch(`questions/${prof}.json`);
       const data = await res.json();
       new Question(user, prof, data);
     }
 
-    if(selectedProf === 'web-dev'){
-      fetchQuestions(selectedUser, selectedProf, 'web-dev');
-    }
-    else if(selectedProf === 'mobile-dev') {
-      fetchQuestions(selectedUser, selectedProf, 'mobile-dev');
-    }
-    else if (selectedProf === 'digital-marketer') {
-      fetchQuestions(selectedUser, selectedProf, 'digital-marketer');
+    if(selectedProf){
+      fetchQuestions(selectedUser, selectedProf);
     }
     else {
       alert('No Questions available !!!');
@@ -82,17 +70,24 @@ form.addEventListener('submit', e => {
   document.querySelector('section').style.display = 'block';
 })
 
+function removeWarning(){
+  setTimeout(() => {
+    warningArea.innerHTML = '';
+    warningArea.classList.remove('warning');
+  }, 3000);
+}
+
 class Question {
   constructor(username, prof, questions){
     this.score = 0;
     this.correctAnsw = 0;
     this.wrongAnsw = 0;
-    this.totalTime = 10 * 60;
+    this.totalTime = 5 * 60;
     this.selectedUser = username;
     this.selectedProf = prof;
     this.answerSheetDisplay = [...questions];
     this.questions = questions;
-    user.textContent = this.selectedUser.toUpperCase();
+    user.textContent = this.selectedUser;
     score.innerHTML = +this.score;
     setInterval(() => {
       this.getTimer();
@@ -110,7 +105,7 @@ class Question {
     if(this.totalTime <  0){
       this.result();
     } else {
-      timeOut.innerHTML = `${m}:${s}`;
+      timeOut.innerHTML = ` ${m}:${s} `;
     }
   }
 
@@ -120,7 +115,7 @@ class Question {
     let correctAns = this.correctAnsw;
     let wrongAns = this.wrongAnsw;
     let starRating = Math.floor(totalScore / 10);
-    console.log(starRating);
+
     let result = document.querySelector('.result');
     let starEle = document.querySelectorAll('.star-rating i');
 
@@ -138,9 +133,9 @@ class Question {
     }
 
     document.getElementById('total_score').innerHTML = totalScore;
-    document.getElementById('total_time').innerHTML = `( ${totalTime_Taken} )`;
-    document.getElementById('correct_anw').innerHTML = correctAns < 10 ? '0' + correctAns : correctAns;
-    document.getElementById('wrong_anw').innerHTML = wrongAns < 10 ? '0' + wrongAns : wrongAns;
+    document.getElementById('total_time').innerHTML = `(${totalTime_Taken})`;
+    document.getElementById('correct_anw').innerHTML = (correctAns < 10 && correctAns > 0) ? '0' + correctAns : correctAns;
+    document.getElementById('wrong_anw').innerHTML = (wrongAns < 10 && wrongAns > 0) ? '0' + wrongAns : wrongAns;
 
     document.querySelector('section').style.display = 'none';
     document.querySelector('article').style.display = 'block';
@@ -149,7 +144,8 @@ class Question {
     answerSheet.addEventListener('click', () => {
       this.showAnswers();
       document.querySelector('#table').style.display = 'block';
-      body.style.height = 'auto';
+      allContent.style.height = 'auto';
+      answerSheet.style.display = 'none';
     })
   }
 
@@ -165,10 +161,10 @@ class Question {
 
   makeOptions(singleQuestion, questionNum){
     let optionBtn;
-    const { id, question, options, answer } = singleQuestion;
+    const { question, options, answer } = singleQuestion;
 
     document.getElementById('question').innerHTML = question;
-    document.getElementById('q-number').innerHTML = `${questionNum}/10`;
+    document.getElementById('q-number').innerHTML = `${questionNum} / 10`;
     let ansCheck = document.querySelector('.checker');
 
       options.forEach(option => {
@@ -178,7 +174,7 @@ class Question {
         div.className = 'col-12 col-md-6 my-2 my-md-3';
 
         optionBtn = document.createElement('button');
-        optionBtn.className = 'lead w-75 mx-auto py-2 btn btn-outline-secondary';
+        optionBtn.className = 'lead w-75 mx-auto py-2 btn btn-outline-secondary text-break';
         optionBtn.innerHTML = option;
 
         div.append(optionBtn);
@@ -218,29 +214,29 @@ class Question {
       this.makeAnsRow(showAns);
     }
     else {
+      table.append(tableWrapper);
       return;
     }
-}
+  }
 
 makeAnsRow(ans){
   let count = 10 - ans.id + 1;
-  let table = document.getElementById('table');
 
   let row = document.createElement('div');
   row.className = 'row no-gutters';
 
   let qCol = document.createElement('div');
-  qCol.className = 'col col-9  px-3 py-1';
+  qCol.className = 'col-9  px-3 py-1';
   qCol.innerHTML = `<p><span>${count})</span> ${ans.question}</p>`;
 
   let aCol = document.createElement('div');
-  aCol.className = 'col col-3 text-center px-3 py-1';
+  aCol.className = 'col-3 text-center px-3 py-1';
   aCol.innerHTML = `<p>${ans.answer}</p>`;
 
   row.append(qCol);
   row.append(aCol);
 
-  table.append(row);
+  tableWrapper.append(row);
 
   this.showAnswers();
 }
