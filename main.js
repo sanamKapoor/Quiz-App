@@ -25,22 +25,22 @@ form.addEventListener('submit', e => {
   warningArea.classList.add('warning');
 
   if((selectedUser === '' && selectedProf === '') || (selectedUser === undefined && selectedProf === null)){
-    warningArea.innerHTML = 'Please provide both fields ...';
+    warningArea.textContent = 'Please provide both fields ...';
     removeWarning();
     return;
   }
   else if(selectedUser === '' || selectedUser === undefined){
-    warningArea.innerHTML = 'Please provide username ...';
+    warningArea.textContent = 'Please provide username ...';
     removeWarning();
     return;
   }
   else if(!regxForUsername.test(selectedUser)){
-    warningArea.innerHTML = 'Username should only contain alphabets ...';
+    warningArea.textContent = 'Username should only contain alphabets ...';
     removeWarning();
     return;
   }
   else if(selectedProf === '' || selectedProf === undefined){
-    warningArea.innerHTML = 'Please choose any profession ...';
+    warningArea.textContent = 'Please choose any profession ...';
     removeWarning();
     return;
   }
@@ -72,7 +72,7 @@ form.addEventListener('submit', e => {
 
 function removeWarning(){
   setTimeout(() => {
-    warningArea.innerHTML = '';
+    warningArea.textContent = '';
     warningArea.classList.remove('warning');
   }, 3000);
 }
@@ -88,7 +88,7 @@ class Question {
     this.answerSheetDisplay = [...questions];
     this.questions = questions;
     user.textContent = this.selectedUser;
-    score.innerHTML = +this.score;
+    score.textContent = +this.score;
     setInterval(() => {
       this.getTimer();
       this.totalTime -= 1;
@@ -105,13 +105,13 @@ class Question {
     if(this.totalTime <  0){
       this.result();
     } else {
-      timeOut.innerHTML = ` ${m}:${s} `;
+      timeOut.textContent = ` ${m}:${s} `;
     }
   }
 
   result(){
     let totalScore = this.score;
-    let totalTime_Taken = timeOut.innerHTML;
+    let totalTime_Taken = timeOut.textContent;
     let correctAns = this.correctAnsw;
     let wrongAns = this.wrongAnsw;
     let starRating = Math.floor(totalScore / 10);
@@ -120,11 +120,11 @@ class Question {
     let starEle = document.querySelectorAll('.star-rating i');
 
     if(totalScore >= 30){
-      result.innerHTML = '!! Well Played !!';
+      result.textContent = '!! Well Played !!';
     } else if(totalScore < 20) {
-      result.innerHTML = '!! Keep Trying !!';
+      result.textContent = '!! Keep Trying !!';
     } else {
-      result.innerHTML = '!! Not Bad !!';
+      result.textContent = '!! Not Bad !!';
     }
 
     for(let i = 0; i < starRating; i++){  
@@ -132,10 +132,10 @@ class Question {
       starEle[i].classList.add('fas');
     }
 
-    document.getElementById('total_score').innerHTML = totalScore;
-    document.getElementById('total_time').innerHTML = `(${totalTime_Taken})`;
-    document.getElementById('correct_anw').innerHTML = (correctAns < 10 && correctAns > 0) ? '0' + correctAns : correctAns;
-    document.getElementById('wrong_anw').innerHTML = (wrongAns < 10 && wrongAns > 0) ? '0' + wrongAns : wrongAns;
+    document.getElementById('total_score').textContent = totalScore;
+    document.getElementById('total_time').textContent = `(${totalTime_Taken})`;
+    document.getElementById('correct_anw').textContent = (correctAns < 10 && correctAns > 0) ? '0' + correctAns : correctAns;
+    document.getElementById('wrong_anw').textContent = (wrongAns < 10 && wrongAns > 0) ? '0' + wrongAns : wrongAns;
 
     document.querySelector('section').style.display = 'none';
     document.querySelector('article').style.display = 'block';
@@ -163,8 +163,8 @@ class Question {
     let optionBtn;
     const { question, options, answer } = singleQuestion;
 
-    document.getElementById('question').innerHTML = question;
-    document.getElementById('q-number').innerHTML = `${questionNum} / 10`;
+    document.getElementById('question').textContent = question;
+    document.getElementById('q-number').textContent = `${questionNum} / 10`;
     let ansCheck = document.querySelector('.checker');
 
       options.forEach(option => {
@@ -175,7 +175,7 @@ class Question {
 
         optionBtn = document.createElement('button');
         optionBtn.className = 'lead w-75 mx-auto py-2 btn btn-outline-secondary text-break';
-        optionBtn.innerHTML = option;
+        optionBtn.textContent = option;
 
         div.append(optionBtn);
         optionRow.append(div);
@@ -189,7 +189,7 @@ class Question {
           if(yourOption === answer){
             this.score += 5;
             this.correctAnsw++;            
-            score.innerHTML = +this.score;
+            score.textContent = +this.score;
             isCorrect = document.createElement('i');
             isCorrect.className = 'fas fa-check-circle text-success fa-2x p-1';
           } else {
